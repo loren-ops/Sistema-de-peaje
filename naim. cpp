@@ -22,23 +22,23 @@ int main()
     vector<Vehiculo*> vehiculos;
     vector<Persona*> personas;
 
-    Persona* operador = new Operador("marian Paz", "1060", "OP001");
-    personas.push_back(new Operador("marian Paz", "1060", "OP001"));
+    Persona* operador = new Operador("Maye Caicedo", "2536", "OA44");
+    personas.push_back(new Operador("Maye Caicedo", "2536", "OA44"));
     Persona* operador = personas.back();
     Caseta* cerroVerde = new Caseta(registros, operador);
 
     vector<Vehiculo*> vehiculos;
 
-    Persona* forastero = new Propietario("Jeison Macias", "1057", false);
-    Persona* vecino = new Propietario("Santiago Ijaji", "1058", true);
-    personas.push_back(new Propietario("Jeison Macias", "1057", false));
+    Persona* forastero = new Propietario("Karina", "2063", false);
+    Persona* vecino = new Propietario("samantha", "1958", true);
+    personas.push_back(new Propietario("paola", "3457", false));
     Persona* forastero = personas.back();
-    personas.push_back(new Propietario("Santiago Ijaji", "1058", true));
+    personas.push_back(new Propietario("Samantha", "1958", true));
     Persona* vecino = personas.back();
 
 
     try {
-@@ -35,42 +39,47 @@
+
         //CASOS DE PRUEBA
 
         cout << "CASOS DE PRUEBA" << endl;
@@ -64,33 +64,31 @@ int main()
         cout << "---------------------------------------------------------" << endl;
 
         cout << "3 Moto XYZ45A de 125 cc, propietario vecino. ¿Cuánto paga? " << endl;
-        Vehiculo* v2 = new Moto(vecino, "XYZ45A", 125);
-        vehiculos.push_back(new Moto(vecino, "XYZ45A", 125));
+        Vehiculo* v2 = new Moto(vecino, "QLQ354", 354);
+        vehiculos.push_back(new Moto(vecino, "QLQ354", 354));
         Vehiculo* v2 = vehiculos.back();
         cout << "Pago: " << v2->cobrar() << endl;
         cout << "---------------------------------------------------------" << endl;
 
         cout << "4 Moto MOT650 de 650 cc, sin propietario.¿Cuánto paga? ¿Es de alto cilindraje?" << endl;
-        Vehiculo* v3 = new Moto(nullptr, "MOT650", 650);
-        vehiculos.push_back(new Moto(nullptr, "MOT650", 650));
+        Vehiculo* v3 = new Moto(nullptr, "MOT456", 456);
+        vehiculos.push_back(new Moto(nullptr, "MOT456", 456));
         Vehiculo* v3 = vehiculos.back();
         cout << "Pago: " << v3->cobrar() << endl;
         cout << "---------------------------------------------------------" << endl;
 
         cout << "5 Bus BUS777 de 38 puestos, propietario vecino. ¿Cuánto paga?" << endl;
-        Vehiculo* v4 = new Bus(vecino, "BUS777", 38);
-        vehiculos.push_back(new Bus(vecino, "BUS777", 38));
+        Vehiculo* v4 = new Bus(vecino, "BUS987", 45);
+        vehiculos.push_back(new Bus(vecino, "BUS987", 45));
         Vehiculo* v4 = vehiculos.back();
         cout << "Pago: " << v4->cobrar() << endl;
         cout << "---------------------------------------------------------" << endl;
 
-        cout << "6 Camión CAM301 de 3 ejes, sin propietario. ¿Cuánto paga?" << endl;
+        cout << "6 Camión CAM561 de 3 ejes, sin propietario. ¿Cuánto paga?" << endl;
         Camion* v5 = new Camion(nullptr, "CAM301", 3); // Cambie Vehiculo* a Camion* para poder llamar a agregarEje(), no entre otra solucion
         vehiculos.push_back(v5);
         cout << "Pago: " << v5->cobrar() << endl;
         cout << "---------------------------------------------------------" << endl;
-
-@@ -88,8 +97,6 @@
         //cerroVerde->agregarRegistro(v7);
         cerroVerde->mostrarRegistros();
 
@@ -99,7 +97,7 @@ int main()
     }
     catch (const PlacaInvalidaException& e) {
         cout << "Error de placa: " << e.what() << endl;
-@@ -107,8 +114,8 @@
+
     cout << "8. Crear un carro con la placa vacia. ¿Que excepcion se lanza?" << endl;
     try {
         Vehiculo* v6 = new Carro(forastero, "", 2);
@@ -109,7 +107,7 @@ int main()
     }
     catch (const PlacaInvalidaException& e) {
         cout << "Error de placa: " << e.what() << endl;
-@@ -118,48 +125,51 @@
+
     cout << "9. Crear un camion de 1 eje. ¿Que excepcion se lanza?" << endl;
     try {
         Camion* v7 = new Camion(forastero, "CAM001", 1);
@@ -139,9 +137,9 @@ int main()
     cout << "---------------------------------------------------------" << endl;
     cout << "Otras Pruebas" << endl;
 
-    Persona* p1 = new Propietario("Jeison", "1058", true);
-    Persona* p2 = new Propietario("Juan", "1059", false);
-    Persona* p3 = new Operador("Maria", "1060", "ZA63");
+    Persona* p1 = new Propietario("Mario", "9867", true);
+    Persona* p2 = new Propietario("camila", "4563", false);
+    Persona* p3 = new Operador("carlos", "9876", "ZA63");
 
     Caseta* caseta = new Caseta({}, p3);
 
